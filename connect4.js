@@ -79,7 +79,12 @@ class Game {
   placeInTable(y, x) {
     const piece = document.createElement('div');
     piece.classList.add('piece');
-    piece.style.backgroundColor = this.currPlayer.color;
+    if (this.currPlayer.color.toLowerCase() === "piss yellow") {
+      console.log(this.currPlayer.color.toLowerCase())
+      piece.classList.add('yellow');
+    } else {
+      piece.style.backgroundColor = this.currPlayer.color;
+    }
     piece.style.top = -50 * (y + 2);
 
     const spot = document.getElementById(`${y}-${x}`);
